@@ -66,6 +66,13 @@
 .pet_nav_qs {background: #19ce8b; }
 .pet_nav_qt {background: #fe618e; }
 
+.tag_fresh { border-right: 3px solid #fe9700; color: #fe9700;  }
+.tag_video {border-right: 3px solid #19cf8a;color: #19cf8a;}
+.tag_anecdote { border-right: 3px solid #f26765; color: #f26765;  } /* 趣闻 */
+.tag_read { border-right: 3px solid #764f9c; color: #764f9c;  }
+.tag_atlas { border-right: 3px solid #6f68df; color: #6f68df;  } /* 图集 */
+.tag_cute { border-right: 3px solid #7f2d00; color: #7f2d00;  } /* 萌专题 */
+
 .circle_nav_list span {
   display: block;
   width: 100%;
@@ -121,8 +128,6 @@
   padding-right: 8px;
   margin: 3px 0;
   font-size: 12px;
-  border-right: 3px solid #fe9700;
-  color: #fe9700;
 }
 
 .row {

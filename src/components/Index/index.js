@@ -3,16 +3,24 @@ import './reset.css'
 import './index.css';
 
 import imgURL from '../../images/fl02.png'; // React 加载本地图片
+import NewsItem from '../NewsItem/index';
+
+import {data} from '../../mock/news';
 
 class Index extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      src: '../../images/a1.png'
+      src: '../../images/a1.png',
+      data: data.items
     };
   }
 
   render() {
+    console.log(this.state.data);
+    const list = this.state.data.map( (item) =>
+      <NewsItem item={item}  key={item.id}/>
+    );
     return (
       <div className="index">
         <div className="slider">
@@ -34,28 +42,7 @@ class Index extends Component {
         {/* news_list */}
         <div className="content">
           <ul className="list">
-            <li className="list-item-desc list-item-thumbed">
-              <div className="list_info_nav">
-                <div className="list_info">
-                  <img src={require('../../images/a1.png')} alt=""/>
-                  <span className="list_info_name">Super invincible 菁</span>
-                </div>
-                <div className="list_tag">新鲜事</div>
-              </div>
-              <div className="row">
-                <div className="sm-8 list_main">
-                  <h3 className="list-item-hd"><a href="#" className="list_link">十一长假哪也不去，宅在家里看电影！</a></h3>
-                  <div
-                    className="list-item-text">每逢长假，总有那么一群人选择远离人山人海，静静地呆在家，坐在电脑电视前。长时间的工作学习让他们感觉很疲惫，对什么都提不起劲，打开电脑却不知道干什么好
-                  </div>
-                </div>
-                <div className="sm-4 list-thumb">
-                  <a href="##" className="">
-                    <img src={require('../../images/q1.png')} className="list_img" alt=""/>
-                  </a>
-                </div>
-              </div>
-            </li>
+            { list }
           </ul>
         </div>
       </div>
